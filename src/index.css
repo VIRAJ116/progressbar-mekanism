@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: white;
+}
