@@ -51,7 +51,9 @@ function App() {
           >
             {count}%
           </progress>
-          <div>{Number(timer) / (count * 10)}%</div>
+          <div className="text-white">
+            {(Number(timer) / (count * 10)).toFixed(0)}%
+          </div>
         </div>
       </div>
     </>
