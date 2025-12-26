@@ -13,14 +13,14 @@ function App() {
     progressRef.current.style.transitionDuration = `${count}s`;
     let interval = setInterval(() => {
       setTimer((prev) => {
-        if (Number(prev) > String(count * 1000)) return;
+        if (Number(prev) > Number(count * 1000)) return prev;
         return String(Number(prev) + 10);
       });
     }, 10);
     setTimeout(() => {
       setIsLoading(false);
       clearInterval(interval);
-    }, count * 1000);
+    }, count * 1000 + 30);
   };
   return (
     <>
@@ -51,6 +51,7 @@ function App() {
           >
             {count}%
           </progress>
+          <div>{Number(timer) / (count * 10)}%</div>
         </div>
       </div>
     </>
